@@ -7,16 +7,17 @@ const App = () => {
   const [minuteRatio, setMinuteRatio] = useState(0);
   const [hourRatio, setHourRatio] = useState(0);
 
-  const setClock = () => {
-    const currentDate = new Date();
-    setSecondRatio(currentDate.getSeconds() / 60);
-    setMinuteRatio((secondRatio + currentDate.getMinutes()) / 60);
-    setHourRatio((minuteRatio + currentDate.getHours()) / 12);
-  };
+
 
 
   //Every second should clock executes 
   useEffect(() => {
+    const setClock = () => {
+      const currentDate = new Date();
+      setSecondRatio(currentDate.getSeconds() / 60);
+      setMinuteRatio((secondRatio + currentDate.getMinutes()) / 60);
+      setHourRatio((minuteRatio + currentDate.getHours()) / 12);
+    };
     const timeoutId = setTimeout(() => {
       setClock();
     }, 1000);
