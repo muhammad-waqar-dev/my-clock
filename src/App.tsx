@@ -17,10 +17,14 @@ const App = () => {
 
   //Every second should clock executes 
   useEffect(() => {
-    setInterval(() => {
+    const timeoutId = setTimeout(() => {
       setClock();
     }, 1000);
-  }, []);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [secondRatio, minuteRatio]);
 
   return (
     <Clock
