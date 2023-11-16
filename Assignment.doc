@@ -1,0 +1,17 @@
+Frontend Developer Assessment
+Introduction
+Welcome to the Senior Frontend Developer assessment! In this assessment, you will demonstrate your skills in creating a responsive and interactive analog clock using the provided Figma design. You have 45 minutes to complete the task.
+
+Please make sure to read the instructions carefully and follow best practices for clean, maintainable code. Your code will be evaluated on functionality, correctness, responsiveness, and adherence to the provided design.
+
+Objective 
+
+Create a dynamic analog clock based 
+on the Figma design provided link to Figma design. The clock should accurately display the current time, including the hours, minutes, and seconds.
+
+Technical Requirements
+1- The clock should be responsive and work well on various screen sizes.
+2- Ensure that the clock hands (hour, minute, and second) move smoothly to represent the current time.
+3- Implement any necessary transitions or animations to make the clock visually appealing.
+
+Use HTML, CSS, and JavaScript to create the clock. You may use any libraries or frameworks if you prefer.

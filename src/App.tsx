@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import Clock from "./components/ClockCompont";
 
-function App() {
+const App = () => {
+  const [secondRatio, setSecondRatio] = useState(0);
+  const [minuteRatio, setMinuteRatio] = useState(0);
+  const [hourRatio, setHourRatio] = useState(0);
+
+  const setClock = () => {
+    const currentDate = new Date();
+    setSecondRatio(currentDate.getSeconds() / 60);
+    setMinuteRatio((secondRatio + currentDate.getMinutes()) / 60);
+    setHourRatio((minuteRatio + currentDate.getHours()) / 12);
+  };
+
+
+  //Every second should clock executes 
+  useEffect(() => {
+    setInterval(() => {
+      setClock();
+    }, 1000);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Clock
+      secondRatio={secondRatio}
+      minuteRatio={minuteRatio}
+      hourRatio={hourRatio}
+    />
   );
-}
+};
 
 export default App;
